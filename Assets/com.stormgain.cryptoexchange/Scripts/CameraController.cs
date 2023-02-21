@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     {
         Trail.OnValueUpdated += (value) =>
         {
-            Target = new Vector3(value.x, transform.position.y, transform.position.z);
+            Target = new Vector3(value.x - 2.0f, transform.position.y, transform.position.z);
         };
     }
 

@@ -26,12 +26,15 @@ public class Line : MonoBehaviour
 
         Instantiate(Resources.Load<Trail>("trail")).Init(Positions[Positions.Count - 1]);
 
-        FindObjectOfType<CameraController>().transform.position = Positions[Positions.Count - 1];
-        FindObjectOfType<CameraController>().Target = Positions[Positions.Count - 1];
+        Vector3 cameraPosition = Positions[Positions.Count - 1];
+        cameraPosition.x -= 2.0f;
+
+        FindObjectOfType<CameraController>().transform.position = cameraPosition;
+        FindObjectOfType<CameraController>().Target = cameraPosition;
     }
 
     private Vector3 GetPosition(int lastXPos)
     {
-        return new Vector3(lastXPos / 4.0f, Random.Range(-0.5f, 0.5f), 0);
+        return new Vector3(lastXPos / 5.0f, Random.Range(-0.3f, 0.3f), 0);
     }
 }
