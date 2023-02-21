@@ -13,6 +13,11 @@ public class CameraController : MonoBehaviour
         };
     }
 
+    private void OnDestroy()
+    {
+        Trail.OnValueUpdated = null;
+    }
+
     private void LateUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, Target, speed * Time.deltaTime);
