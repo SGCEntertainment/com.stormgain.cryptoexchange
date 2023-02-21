@@ -20,10 +20,10 @@ public class Trail : MonoBehaviour
         while(true)
         {
             Vector3 init = transform.localPosition;
-            Target = new Vector3(transform.localPosition.x + 0.25f, transform.localPosition.y + Random.Range(-0.2f, 0.2f), transform.localPosition.y);
+            Target = new Vector3(transform.localPosition.x + 0.25f, transform.localPosition.y + Random.Range(-0.4f, 0.4f), transform.localPosition.y);
 
             float et = 0.0f;
-            float duration = 5.0f;
+            float duration = 3.0f;
 
             while(et < duration)
             {
